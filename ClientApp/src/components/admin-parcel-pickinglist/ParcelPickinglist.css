@@ -1,0 +1,31 @@
+.navTabList .nav-link {
+    color: #666666;
+    font-size: 15px;
+}
+
+.navTabList .nav-link:not(.active):hover {
+    cursor: pointer;
+    color: #555;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    /* border-bottom-color: transparent; */
+}
+
+.navTabList .nav-link.active {
+    box-shadow: inset 0px 2px 0px 0px #217ae9;
+    color: #217ae9;
+}
+
+.tab-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: 0;
+    padding: 10px 15px;
+}
+
+.noborders tr td {
+    margin: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,203 @@
+#PAGE_REQFORM {
+    margin: 30px 0;
+}
+
+#PAGE_REQFORM .iform-search {
+    position: relative;
+    display: block;
+}
+
+#PAGE_REQFORM .iform-search>.iform-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: block;
+    text-align: center;
+    width: 2em;
+    line-height: 1;
+    color: #ffffff;
+}
+
+#PAGE_REQFORM .iform-search>.iform-input {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    padding-right: 2em;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #0683e0;
+    border: 1px solid #0683e0;
+    border-radius: 50em;
+    outline: none;
+}
+
+#PAGE_REQFORM .iform-search>.iform-input::-webkit-input-placeholder,
+#PAGE_REQFORM .iform-search>.iform-input:-ms-input-placeholder,
+#PAGE_REQFORM .iform-search>.iform-input::placeholder {
+    color: #dddddd;
+}
+
+#PAGE_REQFORM .link-filter {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0;
+    font-size: 0.875rem;
+    line-height: 1.1;
+}
+
+#PAGE_REQFORM .link-filter:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#PAGE_REQFORM .link-filter>.link-icon {
+    width: 1.5em;
+    text-align: center;
+    color: #919191;
+}
+
+#PAGE_REQFORM .link-filter>.link-label {
+    margin-left: 0.5rem;
+    color: #121212;
+}
+
+#PAGE_REQFORM .link-filter.filter-group>.link-label {
+    font-weight: bolder;
+    color: #382b57;
+}
+
+#PAGE_REQFORM .link-filter.filter-selected>.link-icon {
+    color: #152bf2;
+}
+
+#PAGE_REQFORM .box-view {}
+
+#PAGE_REQFORM .box-view>.box-head {
+    padding: 7px 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#PAGE_REQFORM .box-view>.box-body {
+    padding: 0 10px 7px;
+}
+
+#PAGE_REQFORM .catalog-board {
+    display: flex;
+    flex-wrap: wrap;
+    /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#PAGE_REQFORM .catalog-board>.catalog-slot {
+    flex-basis: calc(100% / 3);
+    min-width: calc(100% / 3);
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#PAGE_REQFORM .g-box {
+    line-height: 1;
+    color: #010101;
+    background-color: #ffffff;
+    /* -webkit-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.25); */
+}
+
+#PAGE_REQFORM .g-box>.g-info {
+    display: flex;
+    padding: 15px;
+    font-size: 0.875rem;
+}
+
+#PAGE_REQFORM .g-box>.g-info>.g-info-l {
+    flex-basis: 40%;
+    min-width: 40%;
+}
+
+#PAGE_REQFORM .g-box>.g-info>.g-info-r {
+    flex-basis: 60%;
+    min-width: 60%;
+    padding-left: 10px;
+}
+
+#PAGE_REQFORM .g-box>.g-info .g-image {
+    display: block;
+    height: 95px;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#PAGE_REQFORM .g-box>.g-info .g-name {
+    display: -webkit-box;
+    padding: 4px 0 2px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: bolder;
+}
+
+#PAGE_REQFORM .g-box>.g-info .g-input {
+    width: 30px;
+    height: auto;
+}
+
+#PAGE_REQFORM .g-box>.g-info .g-button {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #054dc3;
+    border-width: 0;
+    outline: none;
+}
+
+#PAGE_REQFORM .g-box>.g-info .g-button:hover {
+    background-color: #042f74;
+}
+
+#PAGE_REQFORM .g-box>.g-info .g-button:active {
+    background-color: #031b42;
+}
+
+#PAGE_REQFORM .g-box>.g-amount {
+    display: flex;
+    font-size: 80%;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#PAGE_REQFORM .g-box>.g-amount>.g-amount-label {
+    padding: 7px 10px;
+    max-width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#PAGE_REQFORM .g-box>.g-amount>.g-amount-label.g-amount-total {
+    color: #000000;
+    background-color: #efefef;
+}
+
+#PAGE_REQFORM .g-box>.g-amount>.g-amount-label.g-amount-pending {
+    color: #d3151f;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#PAGE_REQFORM .scrollarea-catalog {
+    max-height: 356px;
+}
+
+#PAGE_REQFORM .scrollarea-catalog>.scrollarea-content {
+    padding-right: 15px;
+}
+
+#PAGE_REQFORM .form-group {
+    margin-bottom: 0;
+}

@@ -1,0 +1,95 @@
+/* Provide sufficient contrast against white background */
+
+a {
+    color: #0366d6;
+}
+
+code {
+    color: #E01A76;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.btn-wizard {
+    color: #ffffff;
+    background-color: #7d68db;
+    border-color: #5867a9;
+}
+
+.btn-wizard:hover {
+    color: #ffffff;
+    background-color: #6610f2;
+    border-color: #6610f2;
+}
+
+.modal-dialog {
+    position: absolute !important;
+    top: 45% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+}
+
+.modal-dialog {
+    position: absolute !important;
+    top: 40% !important;
+    max-height: 80vh;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+}
+
+.small .custom-control-label::before,
+.small .custom-control-label::after {
+    top: 0.1rem;
+}
+
+.fileuploader,
+.fileuploader-popup {
+    font-family: inherit;
+}
+
+.react-calendar {
+    width: 300px !important;
+    font-family: inherit !important;
+    border: 1px solid #ced4da !important;
+}
+
+.react-calendar__navigation {
+    height: 40px !important;
+}
+
+.react-calendar__navigation button {
+    min-width: 40px !important;
+}
+
+.react-calendar__navigation__label {
+    font-weight: bolder;
+}
+
+.react-calendar__month-view__weekdays {
+    font-size: 1em !important;
+}
+
+.react-calendar abbr[title],
+.react-calendar abbr[data-original-title] {
+    text-decoration: none;
+}
+
+.titleSupplies {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 5px 0;
+    font-size: 18px;
+    display: flex;
+    margin: 10px 0 15px;
+}
+
+.was-validated select.form-control:invalid,
+select.form-control.is-invalid {
+    padding-right: calc(2em + 0.75rem);
+    background-position: right calc(1em + 0.1875rem) center;
+}

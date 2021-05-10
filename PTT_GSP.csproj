@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <Platforms>AnyCPU;x64</Platforms>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <UserSecretsId>08142a33-e2fc-4603-86c4-d08d7016b3c1</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>x86</PlatformTarget>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.95.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.14" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.5" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.DirectoryServices" Version="5.0.0" />
+  </ItemGroup>
+
+  <!--Plugin DLL-->
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>Refer\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="STCrypt">
+      <HintPath>.\References\STCrypt.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\components\repost\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\components\repost\**" />
+    <EmbeddedResource Remove="ClientApp\src\components\repost\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\components\repost\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\components\admin-basicinformation\admin-jobdescription\JobDescription.tsx" />
+    <None Remove="ClientApp\src\components\admin-basicinformation\admin-jobdescription\JobDescription_Edit.tsx" />
+    <None Remove="ClientApp\src\components\admin-basicinformation\admin-parcelunit\ParcelUnit.tsx" />
+    <None Remove="ClientApp\src\components\admin-basicinformation\admin-parcelunit\ParcelUnit_Edit.tsx" />
+    <None Remove="ClientApp\src\components\admin-pendingapproval\PendingApproval_Detail.tsx" />
+    <None Remove="ClientApp\src\components\admin-request-to-improvestock-list\Request_to_ImproveStock_List.tsx" />
+    <None Remove="ClientApp\src\components\admin-request-to-improvestock\Request_to_ImproveStock.tsx" />
+    <None Remove="ClientApp\src\components\admin-request-to-improvestock\Request_to_ImproveStock_Edit.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\components\admin-basicinformation\admin-jobdescription\JobDescription.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-basicinformation\admin-jobdescription\JobDescription_Edit.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-basicinformation\admin-parcelunit\ParcelUnit.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-basicinformation\admin-parcelunit\ParcelUnit_Edit.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-pendingapproval\PendingApproval_Detail.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-request-to-improvestock-list\Request_to_ImproveStock_List.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-request-to-improvestock\Request_to_ImproveStock.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\admin-request-to-improvestock\Request_to_ImproveStock_Edit.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\components\admin-goods-receive\" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)build\**; $(SpaRoot)build-ssr\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>
